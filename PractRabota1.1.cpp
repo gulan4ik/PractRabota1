@@ -1,10 +1,22 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 void Int()
 {
+    float checkIsNotInt;
     int number;
-    cin >> number;
+    cin >> checkIsNotInt;
+    while (true)
+    {
+        number = checkIsNotInt;
+        if (number != checkIsNotInt)
+        {
+            cout << "Ошибка, введите целое число" << "\n";
+            cin >> checkIsNotInt;
+        }
+        else
+            break;
+    }
     for (int i = sizeof(int) * 8 - 1; i >= 0; --i)
 
     {
@@ -26,7 +38,19 @@ void Float()
         float number;
         int num;
     };
+    int checkIsNotFloat;
     cin >> number;
+    while (true)
+    {
+        checkIsNotFloat = number;
+        if (number == checkIsNotFloat)
+        {
+            cout << "Ошибка, введите десятичное число" << "\n";
+            cin >> number;
+        }
+        else
+            break;
+    }
     for (int i = sizeof(int) * 8 - 1; i >= 0; i--)
 
     {
@@ -55,7 +79,19 @@ void Double()
         double number; 
         unsigned long int doubArray[2]; 
     };
+    int checkIsNotDouble;
     cin >> number;
+    while (true)
+    {
+        checkIsNotDouble = number;
+        if (number == checkIsNotDouble)
+        {
+            cout << "Ошибка, введите десятичное число" << "\n";
+            cin >> number;
+        }
+        else
+            break;
+    }
     for (int i = 1; i >= 0; i--)
     {
         for (int j = sizeof(unsigned long int) * 8 - 1; j >= 0; j--)
