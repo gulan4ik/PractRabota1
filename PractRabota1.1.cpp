@@ -5,6 +5,7 @@ void Int()
 {
     float checkIsNotInt;
     int number;
+    cout << "Введите число" << "\n";
     cin >> checkIsNotInt;
     while (true)
     {
@@ -39,6 +40,7 @@ void Float()
         int num;
     };
     int checkIsNotFloat;
+    cout << "Введите число" << "\n";
     cin >> number;
     while (true)
     {
@@ -80,6 +82,7 @@ void Double()
         unsigned long int doubArray[2]; 
     };
     int checkIsNotDouble;
+    cout << "Введите число" << "\n";
     cin >> number;
     while (true)
     {
