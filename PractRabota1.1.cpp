@@ -54,39 +54,20 @@ void Reverse()
     for (int i = sizeof(int) * 8 - 1; i >= 0; --i)
 
     {
-        if (i == sizeof(int) * 8 - 1)
-        {
-            cout << ((number >> i) & 1);
-            isNegative = (number >> i) & 1;
+            isNegative = (number >> sizeof(int) * 8 - 1) & 1; // узнаём отрицательное или положительное
+            if (i == sizeof(int) * 8 - 1)
+            cout << ((number >> i) & 1) << " ";
             i--;
-        }
-        if (isNegative)
-        {
             if (isEven)
             {
-                cout << (((number >> i) & 1 - 1) & 0); // замена на 0
+                cout << ((!isNegative) ^ ((number >> i) & 1)); // замена на 0
                 isEven = false;
             }
             else
             {
-                cout << ((number >> i) & 1); // бинарный сдвиг вправо и умножение на 1 для получения побитового представления числа
+                cout << ((isNegative) ^ ((number >> i) & 1)); // замена на 1
                 isEven = true;
             }
-        }
-
-        else
-        {
-            if (isEven)
-            {
-                cout << ((number >> i) & 1); // бинарный сдвиг вправо и умножение на 1 для получения побитового представления числа
-                isEven = false;
-            }
-            else
-            {
-                cout << (((number >> i) & 1) | 1); // замена на 1
-                isEven = true;
-            }
-        }
 
         if (i == sizeof(int) * 8 - 1)
 
